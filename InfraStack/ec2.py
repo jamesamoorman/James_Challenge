@@ -1,7 +1,7 @@
 from aws_cdk import aws_ec2 as ec2
-from aws_cdk import aws_iam as iam
+# from aws_cdk import aws_iam as iam
 from aws_cdk import (Stack)
-from aws_cdk.aws_iam import ServicePrincipal
+# from aws_cdk.aws_iam import ServicePrincipal
 from constructs import Construct
 
 
@@ -36,7 +36,7 @@ class EC2Stack(Stack):
         security_group = ec2.SecurityGroup.from_security_group_id(
             self,
             "security_group",
-            id=self.security_group_id
+            security_group_id=self.security_group_id
         )
 
         security_group.add_ingress_rule(
