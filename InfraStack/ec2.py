@@ -40,21 +40,21 @@ class EC2Stack(Stack):
         )
 
         security_group.add_ingress_rule(
-            ec2.Peer.any_ipv4(),
-            'inbound SSH',
-            ec2.Port.tcp(22)
+            peer=ec2.Peer.any_ipv4(),
+            description='inbound SSH',
+            connection=ec2.Port.tcp(22)
         )
 
         security_group.add_ingress_rule(
-            ec2.Peer.any_ipv4(),
-            'inbound HTTP access',
-            ec2.Port.tcp(80)
+            peer=ec2.Peer.any_ipv4(),
+            description='inbound HTTP access',
+            connection=ec2.Port.tcp(80)
         )
 
         security_group.add_ingress_rule(
-            ec2.Peer.any_ipv4(),
-            'HTTPS access',
-            ec2.Port.tcp(443)
+            peer=ec2.Peer.any_ipv4(),
+            description='HTTPS access',
+            connection=ec2.Port.tcp(443)
         )
         '''
         iam_role = iam.Role(
