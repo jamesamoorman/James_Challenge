@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import os
 import aws_cdk as cdk
 from WebApplication.InfraStack.ec2 import EC2Stack
 
